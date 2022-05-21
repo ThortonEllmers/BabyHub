@@ -1,10 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("BabyHub - Bee Swarm Simulator", "GrapeTheme")
 
---Test Section
-local ILOVEYOU = Window:NewTab("I Love You")
-local ILOVEYOU = ILOVEYOU:NewSection("I Love You")
-
 -- Main Settings
 local MainSection = Window:NewTab("Main")
 
