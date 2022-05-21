@@ -32,21 +32,32 @@ local Planters = Window:NewTab("Planters")
 
 -- Player Settings 
 local PlayerSection = Window:NewTab("Player")
-local PlayerSection = PlayerSection:NewSection("Settings")
+local PlayerSection = PlayerSection:NewSection("Player Settings")
 
+-- Player Settings - Walk Speed
 PlayerSection:NewSlider("Walk Speed", "Change Player Speed", 150, 50, function(v) -- 500 (MaxValue) | 0 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
 end)
 
-PlayerSection:NewSlider("Jump Power", "Change Player Jump Power", 150, 75, function(ws) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = ws
+-- Player Settings - Jump Power
+PlayerSection:NewSlider("Jump Power", "Change Player Jump Power", 150, 75, function(v) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
 end)
 
 -- Teleport Settings 
 local TeleportSection = Window:NewTab("Teleport")
-local TeleportSection = TeleportSection:NewSection("Teleport to field") 
+local TeleportSection = TeleportSection:NewSection("Teleporters") 
 
-TeleportSection:NewButton("Mushroom Field", "Teleport to Mushroom Field", function()
+TeleportSection:NewDropdown("Field Teleporter", "Teleport to a selected field", {"Bamboo Field", "Blue Flower Field", "Cactus Field", "Clover Field", "Coconut Field", "Dandelion Field", "Mountain Top Field","Mushroom Field", "Pepper Patch", "Pineapple Patch", "Pine Tree Forest", "Pumpkin Field", "Rose Field", "Spider Field", "Strawberry Field", "Sunflower Field", "Stump Field"}, function(currentOption)
+    print(currentOption)
+end)
+
+TeleportSection:NewDropdown("Summoner Teleporter", "Teleport to special summoners", {"Honey Storm", "Mythic Meteor", "Sprout"}, function(currentOption)
+    print(currentOption)
+end)
+
+TeleportSection:NewDropdown("Converter Teleporter", "Teleport to converters", {"Instant Converter A", "Instant Converter B", "Instant Converter C"}, function(currentOption)
+    print(currentOption)
 end)
 
 -- Game Settings
