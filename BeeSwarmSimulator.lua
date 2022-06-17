@@ -20,6 +20,12 @@ end)
 local FarmingSection = Window:NewTab("Farming")
 local FarmingSection = FarmingSection:NewSection("Farming")
  
+FarmingSection:NewToggle("Sell Pollen", "Toggle to sell pollen", function(v)
+    --while true do
+
+    --end
+end)
+
 --Farming Settings - Auto Dig
 FarmingSection:NewToggle("Auto Dig", "Toggle to auto dig", function(v)
     --while true do
@@ -27,6 +33,21 @@ FarmingSection:NewToggle("Auto Dig", "Toggle to auto dig", function(v)
     --end
 end)
 
+-- Auto Kill Settings
+local AutoKillSection = Window:NewTab("Auto Kill")
+
+-- Main Settings - Claim Hive
+local AutoKillSection = AutoKillSection:NewSection("Auto Kill") 
+AutoKillSection:NewToggle("Coconut Crab", "Click to auto kill coconut crab", function()
+    local cocopad = Instance.new("Part", game:GetService("Workspace"))
+    cocopad.Name = "Coconut Part"
+    cocopad.Anchored = true
+    cocopad.Transparency = 1
+    cocopad.Size = Vector3.new(10, 1, 10)
+    cocopad.Position = Vector3.new(-307.52117919922, 105.91863250732, 467.86791992188)
+end)
+
+-- Puffshrooms Settings
 local Puffshrooms = Window:NewTab("Puffshrooms")
 local Planters = Window:NewTab("Planters")
 
