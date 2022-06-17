@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("BabyHub - Bee Swarm Simulator", "GrapeTheme")
+local Window = Library.CreateLib("BabyHub - Clicker Simulator", "GrapeTheme")
 
 -- Main Settings
 local MainSection = Window:NewTab("Main")
