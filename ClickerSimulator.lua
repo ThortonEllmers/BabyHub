@@ -3,6 +3,7 @@ local Window = Library.CreateLib("BabyHub - Clicker Simulator", "GrapeTheme")
 
 -- Main Settings
 local MainSection = Window:NewTab("Main")
+local Settings = Settings:NewSection("Main")
 
 -- Game Settings
 local Settings = Window:NewTab("Settings")
