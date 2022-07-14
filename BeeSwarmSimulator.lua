@@ -127,7 +127,7 @@ local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxkin
         end    
     })
 
-    MainTab:AddButton({
+    MainTab:AddToggle({
         Name = "Convert Honey",
         Default = false,
         Callback = function(Value)
