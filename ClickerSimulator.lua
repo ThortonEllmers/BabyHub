@@ -1,15 +1,31 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("BabyHub - Clicker Simulator", "GrapeTheme")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "BabyHub | Clicker Simulator", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
 
--- Main Settings
-local MainSection = Window:NewTab("Main")
-local Settings = Settings:NewSection("Main")
+--BabyHub Values
+	getgenv().autoRebirth = true
 
--- Game Settings
-local Settings = Window:NewTab("Settings")
-local Settings = Settings:NewSection("Settings")
+--BabyHub Functions
 
--- Game Settings - Menu Toggle
-Settings:NewKeybind("Toggle GUI", "Press V to toggle GUI", Enum.KeyCode.V, function()
-	Library:ToggleUI()
-end)
+	function autoRebirth()
+		while getgenv().autoRebirth == true do
+			game:GetService("ReplicatedStorage").Events.Client.requestRebirth:FireServer(1,false,false)
+		 end
+	end
+
+--Farm Tab
+	local FarmTab = Window:MakeTab({
+		Name = "AutoFarm",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	FarmTab:AddToggle({
+		Name = "Auto Rebirth",
+		Default = false,
+		Callback = function(Value)
+			getgenv().autoRebirth = Value
+			autoRebirth()
+		end    
+	})
+
+OrionLib:Init()
