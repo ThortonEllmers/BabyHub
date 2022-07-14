@@ -162,7 +162,7 @@ local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxkin
     })
 
     MiscTab:AddSlider({
-        Name = "Walk Speed",game.Players.LocalPlayer.Character.Humanoid.JumpPower = ws
+        Name = "Walk Speed",
         Min = 50,
         Max = 150,
         Default = 50,
@@ -188,5 +188,5 @@ local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxkin
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
         end    
     })
-    
+
 OrionLib:Init()
