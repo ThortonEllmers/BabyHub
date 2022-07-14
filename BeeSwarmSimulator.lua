@@ -1,91 +1,156 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("BabyHub - Bee Swarm Simulator", "GrapeTheme")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "BabyHub | Bee Swarm Simulator", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
+getgenv().api = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/api.lua"))()
+local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/bssapi.lua"))()
 
--- Main Settings
-local MainSection = Window:NewTab("Main")
+--BabyHub Values
+    getgenv().autoSwing = true
+    getgenv().autoSwingC = true
 
--- Main Settings - Claim Hive
-local MainSection = MainSection:NewSection("Claim Hive") 
-MainSection:NewButton("Claim Hive", "Click to claim hive", function()
-    hives = game.Workspace.Honeycombs:GetChildren() 
-    for i = #hives, 1, -1 
-    do  v = game.Workspace.Honeycombs:GetChildren()[i] 
-        if v.Owner.Value == nil 
-        then game.ReplicatedStorage.Events.ClaimHive:FireServer(v.HiveID.Value) 
-        end 
+--BabyHub Functions
+    local Player = game:GetService("Players").LocalPlayer
+    local Character = Player.Character or Player:WaitForCharacter()
+
+    function autoSwing()
+        while getgenv().autoSwing == true do
+            workspace.ICUB4MWAH["Dark Scythe"].ClickEvent:FireServer()
+            wait(0.001)
+        end
     end
-end)
 
--- Farming Settings
-local FarmingSection = Window:NewTab("Farming")
-local FarmingSection = FarmingSection:NewSection("Farming")
- 
-FarmingSection:NewToggle("Sell Pollen", "Toggle to sell pollen", function(v)
-    --while true do
+    function autoSwingC()
+        while getgenv().autoSwingC == true do
+            workspace.CHRISSYC01["Dark Scythe"].ClickEvent:FireServer()
+            wait(0.001)
+        end
+    end
 
-    --end
-end)
+        function autoSwingV2()
+            while getgenv().autoSwingV2 == true do
+                if game.Players.LocalPlayer then 
+                    if game.Players.LocalPlayer.Character then 
+                        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
+                            if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("ClickEvent", true) then 
+                            tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") or nil 
+                            end 
+                        end 
+                    end 
+                if tool then getsenv(tool.ClientScriptMouse).collectStart(game:GetService("Players").LocalPlayer:GetMouse()) end end collectorSteal() workspace.NPCs.Onett.Onett["Porcelain Dipper"].ClickEvent:FireServer()
+            end
+        end
 
---Farming Settings - Auto Dig
-FarmingSection:NewToggle("Auto Dig", "Toggle to auto dig", function(v)
-    --while true do
+    function convertHoney()
+        while getgenv().convertHoney == true do
+            if game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.TextBox.Text ~= "Stop Making Honey" and game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.BackgroundColor3 ~= Color3.new(201, 39, 28) or (game:GetService("Players").LocalPlayer.SpawnPos.Value.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > 13 then
+                api.tween(1, game:GetService("Players").LocalPlayer.SpawnPos.Value * CFrame.fromEulerAnglesXYZ(0, 110, 0) + Vector3.new(0, 0, 9))
+                wait(1)
+                if game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.TextBox.Text ~= "Stop Making Honey" and game.Players.LocalPlayer.PlayerGui.ScreenGui.ActivateButton.BackgroundColor3 ~= Color3.new(201, 39, 28) or (game:GetService("Players").LocalPlayer.SpawnPos.Value.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > 13 then game:GetService("ReplicatedStorage").Events.PlayerHiveCommand:FireServer("ToggleHoneyMaking") end
+                wait(1)
+            end
+        end
+    end
 
-    --end
-end)
+    local function getMonsterName(name)
+        local newName = nil
+        local keywords = {
+            ["Mushroom"]="Ladybug";
+            ["Rhino"]="Rhino Beetle";
+            ["Spider"]="Spider";
+            ["Ladybug"]="Ladybug";
+            ["Scorpion"]="Scorpion";
+            ["Mantis"]="Mantis";
+            ["Beetle"]="Rhino Beetle";
+            ["Tunnel"]="Tunnel Bear";
+            ["Coco"]="Coconut Crab";
+            ["King"]="King Beetle";
+            ["Stump"]="Stump Snail";
+            ["Were"]="Werewolf"
+        }
+        for i,v in pairs(keywords) do
+            if string.find(string.upper(name),string.upper(i)) then
+                newName = v
+            end
+        end
+        if newName == nil then newName = name end
+        return newName
+    end
 
--- Auto Kill Settings
-local AutoKillSection = Window:NewTab("Auto Kill")
+    local function collectorSteal()
+        if kocmoc.vars.autodigmode == "Collector Steal" then
+            for i,v in pairs(game.Players:GetChildren()) do
+                if v.Name ~= game.Players.LocalPlayer.Name then
+                    if v then
+                        if v.Character then
+                            if v.Character:FindFirstChildWhichIsA("Tool") then
+                                if v.Character:FindFirstChildWhichIsA("Tool"):FindFirstChild("ClickEvent") then
+                        v.Character:FindFirstChildWhichIsA("Tool").ClickEvent:FireServer()
+                    end
+                end
+            end
+            end
+            end
+            end
+        end
+    end
+--On BabyHub Start
+    hives = game.Workspace.Honeycombs:GetChildren() 
+        for i = #hives, 1, -1 
+            do  v = game.Workspace.Honeycombs:GetChildren()[i] 
+            if v.Owner.Value == nil 
+            then game.ReplicatedStorage.Events.ClaimHive:FireServer(v.HiveID.Value) 
+            end 
+        end
 
--- Main Settings - Claim Hive
-local AutoKillSection = AutoKillSection:NewSection("Auto Kill") 
-AutoKillSection:NewToggle("Coconut Crab", "Click to auto kill coconut crab", function()
-    local cocopad = Instance.new("Part", game:GetService("Workspace"))
-    cocopad.Name = "Coconut Part"
-    cocopad.Anchored = true
-    cocopad.Transparency = 1
-    cocopad.Size = Vector3.new(10, 1, 10)
-    cocopad.Position = Vector3.new(-307.52117919922, 105.91863250732, 467.86791992188)
-end)
+--MainTab
 
--- Puffshrooms Settings
-local Puffshrooms = Window:NewTab("Puffshrooms")
-local Planters = Window:NewTab("Planters")
+    local MainTab = Window:MakeTab({
+        Name = "Main",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
 
--- Player Settings 
-local PlayerSection = Window:NewTab("Player")
-local PlayerSection = PlayerSection:NewSection("Player Settings")
+    MainTab:AddToggle({
+        Name = "Auto Swing",
+        Default = false,
+        Callback = function(Value)
+            getgenv().autoSwing = Value
+            autoSwing()
+        end    
+    })
 
--- Player Settings - Walk Speed
-PlayerSection:NewSlider("Walk Speed", "Change Player Speed", 150, 50, function(v) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-end)
+    MainTab:AddToggle({
+        Name = "Auto Swing V2",
+        Default = false,
+        Callback = function(Value)
+            getgenv().autoSwingV2 = Value
+            autoSwingV2()
+        end    
+    })
 
--- Player Settings - Jump Power
-PlayerSection:NewSlider("Jump Power", "Change Player Jump Power", 150, 75, function(v) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-end)
+    MainTab:AddButton({
+        Name = "Convert Honey",
+        Default = false,
+        Callback = function(Value)
+            getgenv().convertHoney = Value
+            convertHoney()
+        end    
+    })
 
--- Teleport Settings 
-local TeleportSection = Window:NewTab("Teleport")
-local TeleportSection = TeleportSection:NewSection("Teleporters") 
+--TeleportTab
 
-TeleportSection:NewDropdown("Field Teleporter", "Teleport to a selected field", {"Bamboo Field", "Blue Flower Field", "Cactus Field", "Clover Field", "Coconut Field", "Dandelion Field", "Mountain Top Field","Mushroom Field", "Pepper Patch", "Pineapple Patch", "Pine Tree Forest", "Pumpkin Field", "Rose Field", "Spider Field", "Strawberry Field", "Sunflower Field", "Stump Field"}, function(currentOption)
-    print(currentOption)
-end)
+    local TeleportTab = Window:MakeTab({
+        Name = "Teleport",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
 
-TeleportSection:NewDropdown("Summoner Teleporter", "Teleport to special summoners", {"Honey Storm", "Mythic Meteor", "Sprout"}, function(currentOption)
-    print(currentOption)
-end)
+    TeleportTab:AddDropdown({
+        Name = "Field Selector",
+        Default = "Dandelion Field",
+        Options = {"Ant Field", "Bamboo Field", "Blue Flower Field", "Catus Field", "Clover Field", "Coconut Field", "Dandelion Field", "Mountain Top Field", "Mushroom Field", "Pepper Patch", "Pineapple Patch", "Pine Tree Forest", "Pumpkin Patch", "Rose Field", "Spider Field", "Strawberry Field", "Stump Field", "Sunflower Field"},
+        Callback = function(Value)
+            print(Value)
+        end    
+    })
 
-TeleportSection:NewDropdown("Converter Teleporter", "Teleport to converters", {"Instant Converter A", "Instant Converter B", "Instant Converter C"}, function(currentOption)
-    print(currentOption)
-end)
-
--- Game Settings
-local Settings = Window:NewTab("Settings")
-local Settings = Settings:NewSection("Settings")
-
--- Game Settings - Menu Toggle
-Settings:NewKeybind("Toggle GUI", "Press V to toggle GUI", Enum.KeyCode.V, function()
-	Library:ToggleUI()
-end)
+OrionLib:Init()
