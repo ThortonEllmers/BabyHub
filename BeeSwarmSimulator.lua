@@ -153,4 +153,40 @@ local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxkin
         end    
     })
 
+--MiscTab
+
+    local MiscTab = Window:MakeTab({
+        Name = "Misc",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    MiscTab:AddSlider({
+        Name = "Walk Speed",game.Players.LocalPlayer.Character.Humanoid.JumpPower = ws
+        Min = 50,
+        Max = 150,
+        Default = 50,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "walkSpeed",
+        Callback = function(Value)
+            print(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end    
+    })
+
+    MiscTab:AddSlider({
+        Name = "Jump Power",
+        Min = 75,
+        Max = 150,
+        Default = 75,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "jumpPower",
+        Callback = function(Value)
+            print(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+        end    
+    })
+    
 OrionLib:Init()
