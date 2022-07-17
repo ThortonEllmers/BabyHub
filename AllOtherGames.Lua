@@ -1,5 +1,5 @@
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "💚 BabyHub | Bid Battles (Beta) - Tycoon", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
+    local Window = OrionLib:MakeWindow({Name = "💚 BabyHub | All Games Supported", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
 
 --BABYHUB MENU TABS
 
@@ -14,7 +14,7 @@
     MiscTab:AddSlider({
         Name = "Walk Speed",
         Min = 50,
-        Max = 300,
+        Max = 1000,
         Default = 50,
         Color = Color3.fromRGB(255,255,255),
         Increment = 1,
@@ -27,7 +27,7 @@
     MiscTab:AddSlider({
         Name = "Jump Power",
         Min = 75,
-        Max = 150,
+        Max = 1000,
         Default = 75,
         Color = Color3.fromRGB(255,255,255),
         Increment = 1,
