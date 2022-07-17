@@ -36,3 +36,25 @@
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
         end    
     })
+
+    function ClickerSimulator()
+        while getgenv().ClickerSimulator == true do
+            game:GetService("Players").game.Players.LocalPlayer.Settings.autoMerge = true
+            wait(0.001)
+        end
+    end
+
+    local ClickerSimulatorTab = Window:MakeTab({
+        Name = "Clicker Simulator",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    ClickerSimulatorTab:AddToggle({
+        Name = "Auto Merge",
+        Default = false,
+        Callback = function(Value)
+            getgenv().ClickerSimulator = Value
+            ClickerSimulator()
+        end    
+    })
