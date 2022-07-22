@@ -2,7 +2,7 @@
 
 if game.PlaceId == 1537690962 then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/BeeSwarmSimulator.lua"))()
-else if game.PlaceId == 9603033881 then
+elseif game.PlaceId == 9603033881 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/BidBattles.lua"))()
 else   
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/AllOtherGames.Lua"))()
