@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "💚 BabyHub | All Games Supported",
 
 local CurrentNetWorth = game:GetService("Players").LocalPlayer.leaderstats["Net Worth"].Value
 local CurrentCash = game:GetService("Players").localPlayer.SaveVars.Cash.Value
-local CurrentGems = game:GetService("Players").ICUB4MWAH.SaveVars.Gems.Value
+local CurrentGems = game:GetService("Players").localPlayer.SaveVars.Gems.Value
 
 --BABYHUB MENU TABS
 
