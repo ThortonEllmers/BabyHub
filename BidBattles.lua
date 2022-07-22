@@ -4,11 +4,31 @@ local Window = OrionLib:MakeWindow({Name = "💚 BabyHub | Bid Battles (Beta) - 
 local CurrentNetWorth = game:GetService("Players").LocalPlayer.leaderstats["Net Worth"].Value
 local CurrentCash = game:GetService("Players").localPlayer.SaveVars.Cash.Value
 local CurrentGems = game:GetService("Players").localPlayer.SaveVars.Gems.Value
+local CurrentItemsValue = CurrentNetWorth - CurrentCash
+
+OrionLib:MakeNotification({
+	Name = "BabyHub Loaded Successfully",
+	Content = "Bid Battles (Beta) - Tycoon",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
 --BABYHUB MENU TABS
 
 local MainTab = Window:MakeTab({
     Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local PlayersTab = Window:MakeTab({
+    Name = "Players Slots",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local TeleportTab = Window:MakeTab({
+    Name = "Teleport",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -51,26 +71,14 @@ MiscTab:AddSlider({
     end    
 })
 
-MainTab:AddTextbox({
-    Name = "Net Worth",
-    Default = CurrentNetWorth,
-    TextDisappear = false,
-    Callback = function(CurrentNetWorth)
-    end	  
-})
+MainTab:AddParagraph("Net Worth", CurrentNetWorth)
+MainTab:AddParagraph("Current Cash", CurrentCash)
+MainTab:AddParagraph("Items Value", CurrentItemsValue)
+MainTab:AddParagraph("Current Gems", CurrentGems)
 
-MainTab:AddTextbox({
-    Name = "Current Cash",
-    Default = CurrentCash,
-    TextDisappear = false,
-    Callback = function(CurrentCash)
-    end	  
-})
-
-MainTab:AddTextbox({
-    Name = "Current Gems",
-    Default = CurrentGems,
-    TextDisappear = false,
-    Callback = function(CurrentGems)
-    end	  
+TeleportTab:AddButton({
+	Name = "Valueation",
+	Callback = function(Valueation)
+        
+  	end    
 })
