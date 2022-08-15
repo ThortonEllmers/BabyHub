@@ -30,9 +30,9 @@ local TestingTab = Window:MakeTab({
 --BABYHUB TESTING
 
 TestingTab:AddButton({
-	Name = "Energy Game Pass",
+	Name = "The Boss GamePass",
 	Callback = function()
-            gamePassId = 52887752
+            gamePassId = 50437477
             market = game:GetService("MarketplaceService")
             http = game:GetService("HttpService")
             info = market:GetProductInfo(gamePassId, Enum.InfoType.GamePass)
