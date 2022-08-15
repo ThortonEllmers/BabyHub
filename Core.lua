@@ -9,5 +9,3 @@ elseif game.PlaceId == 9666226803 then
 else 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/AllOtherGames.Lua"))()
 end
-
-https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/MotelSimulator.lua
