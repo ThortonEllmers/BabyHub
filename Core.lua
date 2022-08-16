@@ -5,7 +5,7 @@ if game.PlaceId == 1537690962 then
 elseif game.PlaceId == 9603033881 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hawtdawgz/ScriptRepository/main/Protected.lua"))()
 elseif game.PlaceId == 9666226803 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/MotelSimulator.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/MotelSimulatorProtected.lua"))()
 else 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/AllOtherGames.Lua"))()
 end
