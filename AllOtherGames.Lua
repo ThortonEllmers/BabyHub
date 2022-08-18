@@ -40,3 +40,40 @@
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
         end    
     })
+
+    MiscTab:AddButton({
+        Name = "Fly\nPress F to Toggle",
+        Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/Fly.lua"))()
+        end    
+  })
+  
+  MiscTab:AddButton({
+        Name = "No Gravity\nPress G to Toggle",
+        Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/NoGravity.lua"))()
+        end    
+  })
+  
+  MiscTab:AddButton({
+        Name = "Click Teleport - Click to Enable/Disable\nHold Left CTRL + Click to Teleport",
+        Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/ClickTeleport.lua"))()
+        end    
+  })
+  
+  MiscTab:AddButton({
+        Name = "Infinite Jump - Click to Enable/Disable",
+        Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/InfiniteJump.lua"))()
+        end    
+  })
+  
+  MiscTab:AddButton({
+        Name = "Player ESP",
+        Callback = function()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/ESP.lua"))()
+        end    
+  })
+
+  OrionLib:Init()
