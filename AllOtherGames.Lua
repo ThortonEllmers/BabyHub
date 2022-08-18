@@ -51,28 +51,28 @@
   MiscTab:AddButton({
         Name = "No Gravity\nPress G to Toggle",
         Callback = function()
-              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/NoGravity.lua"))()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/NoGravity.lua"))()
         end    
   })
   
   MiscTab:AddButton({
         Name = "Click Teleport - Click to Enable/Disable\nHold Left CTRL + Click to Teleport",
         Callback = function()
-              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/ClickTeleport.lua"))()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/ClickTeleport.lua"))()
         end    
   })
   
   MiscTab:AddButton({
         Name = "Infinite Jump - Click to Enable/Disable",
         Callback = function()
-              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/InfiniteJump.lua"))()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/InfiniteJump.lua"))()
         end    
   })
   
   MiscTab:AddButton({
         Name = "Player ESP",
         Callback = function()
-              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/ESP.lua"))()
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/ESP.lua"))()
         end    
   })
 
