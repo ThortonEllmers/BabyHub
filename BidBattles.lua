@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "💚 BabyHub | Bid Battles (Beta) - Tycoon", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
+local Window = OrionLib:MakeWindow({Name = "BabyHub | Bid Battles (Beta) - Tycoon", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
 
 local CurrentNetWorth = game:GetService("Players").LocalPlayer.leaderstats["Net Worth"].Value
 local CurrentCash = game:GetService("Players").localPlayer.SaveVars.Cash.Value
