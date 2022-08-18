@@ -6,6 +6,16 @@ local CurrentCash = game:GetService("Players").localPlayer.SaveVars.Cash.Value
 local CurrentGems = game:GetService("Players").localPlayer.SaveVars.Gems.Value
 local CurrentItemsValue = CurrentNetWorth - CurrentCash
 
+local Activate = Instance.new("TextButton")
+Activate.MouseButton1Down:connect(function()
+	local vu = game:GetService("VirtualUser")
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+		vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		wait(1)
+		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	end)
+end)
+
 OrionLib:MakeNotification({
 	Name = "BabyHub Loaded Successfully",
 	Content = "Bid Battles (Beta) - Tycoon",
