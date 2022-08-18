@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "💚 BabyHub | Bee Swarm Simulator", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
+local Window = OrionLib:MakeWindow({Name = "BabyHub | Bee Swarm Simulator", HidePremium = true, IntroEnabled = false, IntroText = "Loading BabyHub", SaveConfig = true, ConfigFolder = "BabyHub-Config"})
 
 --BabyHub Temporary Variables
     local monsterspawners = game:GetService("Workspace").MonsterSpawners
