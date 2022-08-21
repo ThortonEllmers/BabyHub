@@ -1861,7 +1861,7 @@ TestingTab:AddToggle({
 TestingTab:AddButton({
       Name = "Auto Clean Rooms\nNot Working",
       Callback = function()
-            game:GetService("ReplicatedStorage").Remotes.Verification:FireServer(nil, game:GetService("Workspace").Nodes.Room1Nodes.Bed.Bed.Seats)
+            --game:GetService("ReplicatedStorage").Remotes.Verification:FireServer(nil, game:GetService("Workspace").Nodes.Room1Nodes.Bed.Bed.Seats)
       end    
 })
 
