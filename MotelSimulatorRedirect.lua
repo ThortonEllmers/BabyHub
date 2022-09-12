@@ -1,5 +1,5 @@
 if _G.Beta == true then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/Motel%20Simulator/TestForBeta/MotelSimulatorBetaRewrite.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/MoteSimulatorBetaRewrite.lua"))()
 else 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub-Non-Protected/main/Motel%20Simulator/TestForBeta/MoteSimulatorNormalRewrite.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ThortonEllmers/BabyHub/main/MoteSimulatorNormalRewrite.lua"))()
 end
